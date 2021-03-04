@@ -28,7 +28,11 @@ while game_is_on:
         if car.distance(player) < 20:
             game_is_on = False
             scoreboard.game_over()
+
+        if player.finish_line():
             car_manager.level_up()
+            player.go_to_start()
+            scoreboard.increase_level()
 
 
 
